@@ -1,24 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>MainWindow</string>
+  <property name="windowTitle">
+   <string>Amylum</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon/LogoLogicielADEM.png</normaloff>icon/LogoLogicielADEM.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_firstName"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEdit_lastName"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_lastName">
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_firstName">
+      <property name="text">
+       <string>Prénom</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_email">
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_status">
+      <property name="text">
+       <string>Statut</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_email"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QComboBox" name="comboBox_status">
+      <item>
+       <property name="text">
+        <string>L1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L2I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L2M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L3I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L3M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M1I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M1M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M2I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M2M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DOC</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PROF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AUTRE</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QPushButton" name="pushButton_new">
+      <property name="text">
+       <string>Nouveau</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLabel" name="label_search">
+      <property name="text">
+       <string>Recherche</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0" colspan="2">
+     <widget class="QPushButton" name="pushButton_save">
+      <property name="text">
+       <string>Sauvegarder</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QLineEdit" name="lineEdit_search"/>
+    </item>
+    <item row="0" column="2" rowspan="7" colspan="2">
+     <widget class="QListWidget" name="listWidgetMember"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionG_n_rer_mailing"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="action_Propos"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuAide"/>
+  </widget>
+  <action name="actionG_n_rer_mailing">
+   <property name="text">
+    <string>Générer mailing</string>
+   </property>
+  </action>
+  <action name="action_Propos">
+   <property name="text">
+    <string>À Propos</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>lineEdit_lastName</tabstop>
+  <tabstop>lineEdit_firstName</tabstop>
+  <tabstop>lineEdit_email</tabstop>
+  <tabstop>comboBox_status</tabstop>
+  <tabstop>pushButton_new</tabstop>
+  <tabstop>pushButton_save</tabstop>
+  <tabstop>lineEdit_search</tabstop>
+  <tabstop>listWidgetMember</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
