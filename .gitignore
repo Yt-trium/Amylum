@@ -33,3 +33,6 @@
 
 # QT
 *.user
+
+# Databases
+*.db
